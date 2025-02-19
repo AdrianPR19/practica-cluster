@@ -124,11 +124,11 @@ Asegúrate de tener instalado en tu servidor Debian:
    ```
 2. **Ejecutar pruebas de carga en la versión sin clúster:**
    ```sh
-   loadtest http://localhost:3000/api/500000 -n 1000 -c 100
+   loadtest http://192.168.56.10:3000/api/500000 -n 1000 -c 100
    ```
 3. **Ejecutar pruebas de carga en la versión con clúster:**
    ```sh
-   loadtest http://localhost:3000/api/500000 -n 1000 -c 100
+   loadtest http://192.168.56.10:3000/api/500000 -n 1000 -c 100
    ```
 
 📊 **Comparación de Resultados:**
