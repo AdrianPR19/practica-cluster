@@ -186,3 +186,8 @@ Asegúrate de tener instalado en tu servidor Debian:
    ```sh
    pm2 start ecosystem.config.js
 
+
+4. **Conclusión: ¿Por qué en algunos casos la versión sin clúster tiene mejores resultados?**
+Aunque el uso de clústeres mejora el rendimiento en la mayoría de las aplicaciones al distribuir la carga entre múltiples núcleos de CPU, en ciertos casos concretos, como el de este proyecto, la versión sin clúster puede ofrecer mejores resultados. Esto se debe a que el procesamiento de operaciones pesadas en bucles o tareas computacionales intensivas puede no beneficiarse del modelo de clúster, ya que la sobrecarga de gestión entre los procesos y la sincronización entre los mismos puede terminar afectando el rendimiento.
+
+Cuando el servidor está realizando cálculos de gran magnitud o manejando operaciones que consumen mucho tiempo, la capacidad de clúster para dividir y distribuir el trabajo puede verse contrarrestada por la necesidad de compartir el estado entre los procesos y coordinar su ejecución. En estos casos, una ejecución secuencial sin clúster puede ser más eficiente al evitar dicha sobrecarga. Esto se vuelve evidente cuando la prueba de carga muestra una mayor latencia y menor rendimiento en la versión con clúster, especialmente con cargas altas en operaciones específicas.
