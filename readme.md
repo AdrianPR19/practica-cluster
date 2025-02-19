@@ -186,16 +186,3 @@ Asegúrate de tener instalado en tu servidor Debian:
    ```sh
    pm2 start ecosystem.config.js
 
-1. Aplicación sin Cluster
-Captura de pantalla de la aplicación app_no_cluster.js desplegada:
-\practica-cluster\aplicacion no cluster funcionando.png
-
-
-Métricas de rendimiento para la aplicación app_no_cluster.js:
-
-
-2. Aplicación con Cluster
-Captura de pantalla de la aplicación app_cluster.js desplegada:
-
-
-Métricas de rendimiento para la aplicación app_cluster.js

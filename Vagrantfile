@@ -95,10 +95,25 @@ if (cluster.isMaster) {
 }
 EOF
 
-# Configurar PM2
-pm2 start /home/vagrant/node_project/app_no_cluster.js -i 0
-pm2 save
-pm2 startup systemd
+
+ # Crear archivo ecosystem.config.js
+    cat <<EOF > /home/vagrant/node_project/ecosystem.config.js
+module.exports = {
+  apps: [
+    {
+      name: "app_cluster",
+      script: "app_no_cluster.js",
+      instances: 0,
+      exec_mode: "cluster",
+    },
+  ],
+};
+EOF
+
+    # Configurar PM2 con Ecosystem
+    pm2 start /home/vagrant/node_project/ecosystem.config.js
+    pm2 save
+    pm2 startup systemd
 
   SHELL
 end
