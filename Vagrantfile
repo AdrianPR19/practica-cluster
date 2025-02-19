@@ -23,31 +23,6 @@ Vagrant.configure("2") do |config|
     npm init -y
     npm install express
 
-    # Crear app_no_cluster.js
-cat <<EOF > /home/vagrant/node_project/app_no_cluster.js
-const express = require("express");
-const app = express();
-const port = 3000;
-const limit = 5000000000;
-
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
-
-app.get("/api/:n", function (req, res) {
-    let n = parseInt(req.params.n);
-    let count = 0;
-    if (n > limit) n = limit;
-    for (let i = 0; i <= n; i++) {
-        count += i;
-    }
-    res.send(`Final count is ${count}`);
-});
-
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
-});
-EOF
 
 # Crear app_no_cluster.js
 cat <<EOF > /home/vagrant/node_project/app_no_cluster.js
