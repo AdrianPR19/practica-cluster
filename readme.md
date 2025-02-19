@@ -188,6 +188,7 @@ Asegúrate de tener instalado en tu servidor Debian:
 
 1. Aplicación sin Cluster
 Captura de pantalla de la aplicación app_no_cluster.js desplegada:
+C:\Users\DAW-B\Documents\GitHub\practica-cluster\aplicacion no cluster funcionando.png
 
 
 Métricas de rendimiento para la aplicación app_no_cluster.js:
